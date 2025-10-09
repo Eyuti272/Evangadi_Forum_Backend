@@ -180,7 +180,7 @@ const askgpt = async (req, res) => {
     });
 
     const gptAnswer = response.choices[0].message.content;
-    res.json({ answer: gptAnswer });
+    res.json({ reply: gptAnswer });
   } catch (err) {
     console.error("OpenAI error:", err);
 

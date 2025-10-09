@@ -7,7 +7,9 @@ const {
   editQuestion,
   deleteQuestion,
   askgpt,
+
 } = require("../Controller/questionController");
+
 
 //crud
 // post question
@@ -21,6 +23,6 @@ router.put("/question/:questionid", editQuestion);
 //delete question
 router.delete("/question/:questionid", deleteQuestion);
 //ask gpt
-router.post("/",askgpt)
+router.post("/", askgpt);
 
 module.exports = router;
