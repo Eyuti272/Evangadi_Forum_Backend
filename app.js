@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT;
+const port = 5000;
 const cors = require("cors");
 const authMiddleware = require("./middleware/authMiddleware");
 require("dotenv").config();
