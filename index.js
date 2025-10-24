@@ -14,9 +14,10 @@ const answerRoutes = require("./Routes/answerRoutes");
 // const askgpt = require("./Routes/questionRoute");
 
 //middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+
 
 // routes middle-ware
 app.use("/api/user", userRoutes);
