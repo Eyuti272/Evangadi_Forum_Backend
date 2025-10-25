@@ -10,7 +10,7 @@ const authMiddleware = async (req, res, next) => {
       .send({ msg: "Authentication Invalid" });
   }
   const token = authHeader.split(" ")[1];
-  //   console.log(authHeader);
+    console.log(authHeader);
   //   console.log(token);
 
   try {
