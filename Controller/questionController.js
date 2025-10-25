@@ -12,6 +12,7 @@ const crypto = require("crypto");
 // post question
 const askQuestion = async (req, res) => {
   const { title, description, tag } = req.body;
+  console.log(title);
   const userid = req.user.userid;
   const generateQuestionId = () => {
     const randomBytes = crypto.randomBytes(16);

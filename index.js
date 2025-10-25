@@ -21,9 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes middle-ware
 app.use("/api/user", userRoutes);
-app.use("/api/questions", authMiddleware, questionRoutes);
+app.use("/api/questions",authMiddleware, questionRoutes);
 app.use("/api/answer", authMiddleware, answerRoutes);
 // app.use("/api/chatgpt", askgpt);
+
 
 // Simple route to test
 app.get("/", (req, res) => {
