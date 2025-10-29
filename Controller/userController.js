@@ -14,7 +14,7 @@ const register = async (req, res) => {
   }
   try {
     const [user] = await mysqlconnection.query(
-      "SELECT username,userid from  users where username=? or email=?",
+      "SELECT username,userid from  Users where username=? or email=?",
       [username, email]
     );
     // console.log(user);
@@ -33,7 +33,7 @@ const register = async (req, res) => {
     const hashedpassword = await bcrypt.hash(password, salt);
 
     await mysqlconnection.query(
-      "INSERT INTO users (username,firstname,lastname,email,password) VALUES (?,?,?,?,?)",
+      "INSERT INTO Users (username,firstname,lastname,email,password) VALUES (?,?,?,?,?)",
       [username, firstname, lastname, email, hashedpassword]
     );
     return res.status(StatusCodes.CREATED).json({ msg: "user register" });
@@ -56,7 +56,7 @@ const login = async (req, res) => {
 
   try {
     const [user] = await mysqlconnection.query(
-      "SELECT username,userid,password from users where email = ? ",
+      "SELECT username,userid,password from Users where email = ? ",
       [email]
     );
     // console.log(user);

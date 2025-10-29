@@ -1,4 +1,5 @@
 const mysql2 = require("mysql2");
+const fs = require("fs"); 
 
 // Create connection pool
 const mysqlconnection = mysql2.createPool({
@@ -8,6 +9,9 @@ const mysqlconnection = mysql2.createPool({
   port:process.env.DB_PORT,
   password: process.env.DB_PASSWORD,
   connectionLimit: process.env.DB_CONNECTION_LIMIT || 10,
+  ssl: {
+    ca: fs.readFileSync(process.env.DB_SSL_CA)
+  }
 
 });
 
